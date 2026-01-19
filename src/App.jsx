@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import Projects from "./Pages/Projects";
@@ -8,17 +8,16 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <>
+    // No basename here for localhost
+    <BrowserRouter>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
